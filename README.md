@@ -7,9 +7,13 @@ Project
 Clone this repository:
 
 ```
-git clone https://github.com/ArduPilot/WebTools.git
+git clone https://github.com/OldSem/THE_ORIGINALS_TEST.git
+cd THE_ORIGINALS_TEST
 ```
-
+Create .env file
+```
+make create_env
+```
 Start project:
 
 ```

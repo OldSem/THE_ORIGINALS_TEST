@@ -5,8 +5,8 @@ from sqlalchemy.ext.declarative import declarative_base
 from base.models import Base
 
 
-# SQLALCHEMY_DATABASE_URL = os.environ.get('LOCAL_DB')
-SQLALCHEMY_DATABASE_URL = 'postgresql://user:password@localhost/originals'
+SQLALCHEMY_DATABASE_URL = os.environ.get('LOCAL_DB')
+# SQLALCHEMY_DATABASE_URL = 'postgresql://user:password@localhost/originals'
 print(f'++++++++++++++++++{SQLALCHEMY_DATABASE_URL}++++++++++++++++++++++++++++++++++++++++')
 
 engine = create_engine(SQLALCHEMY_DATABASE_URL)
