@@ -1,0 +1,35 @@
+version: '3.8'
+
+services:
+  local_db:
+    env_file:
+      - config/docker/.env
+    image: postgres:latest
+    container_name: originals_postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  web:
+    container_name: originals_fast_api
+
+    build: .
+
+    image: fastapi_origins:latest
+
+    volumes:
+      - .:/app
+    expose:
+      - "8000"
+
+    ports:
+      - "8000:8000"
+
+    depends_on:
+      - local_db
+    env_file:
+      - config/docker/.env
+
+volumes:
+  postgres_data:
